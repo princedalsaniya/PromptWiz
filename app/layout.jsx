@@ -1,4 +1,13 @@
 import "../styles/globals.css";
+import Nav from "@/components/Nav";
+import Provider from "@/components/Provider"; 
+
+/*
+  component : None.
+  desc : Layout for HomePage
+  route : `{host}/`
+  dependency : Need the loginState of the user to show `createPrompt` and `logout` buttons.
+*/
 
 export const metadata = {
     title: 'PromptWiz',
@@ -14,6 +23,7 @@ const RootLayout = ({ children }) => {
                 </div>
 
                 <main className="app">
+                    <Nav />
                     { children }
                 </main>
             </body>

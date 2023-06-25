@@ -1,3 +1,5 @@
+import Feed from '@/components/Feed';
+
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
@@ -7,8 +9,9 @@ const Home = () => {
         <span className="orange_gradient text-center"> Chat-GPT Prompts</span>
       </h1>
       <p className="desc text-center">
-        PromptWiz is an prompt sharing platform. Where you can create, share and discover creative and helpful prompts for Chat-GPT.
+        PromptWiz is an prompt sharing platform. Create, share and discover creative and helpful prompts for Chat-GPT.
       </p>
+      <Feed />
     </section>
   )
 }
