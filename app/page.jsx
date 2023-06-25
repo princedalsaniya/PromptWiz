@@ -1,5 +1,13 @@
 import Feed from '@/components/Feed';
 
+/*
+  desc      : Page - HomePage
+  route     : `{host}/`
+  requires  : Feed = TBU
+  exports   : HomePage
+  author    : Prince Dalsaniya
+*/
+
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
@@ -16,4 +24,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

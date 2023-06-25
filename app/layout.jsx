@@ -3,10 +3,11 @@ import Nav from "@/components/Nav";
 import Provider from "@/components/Provider"; 
 
 /*
-  component : None.
-  desc : Layout for HomePage
-  route : `{host}/`
-  dependency : Need the loginState of the user to show `createPrompt` and `logout` buttons.
+  desc      : Layout - HomePage
+  route     : `{host}/`
+  requires  : Provider = Component which will provide the session details for current user
+  exports   : Layout which will be rendered on the given route
+  author    : Prince Dalsaniya
 */
 
 export const metadata = {
@@ -18,14 +19,16 @@ const RootLayout = ({ children }) => {
     return (
         <html lang="en">
             <body>
-                <div className="main">
-                    <div className="gradient" />
-                </div>
+                <Provider>
+                    <div className="main">
+                        <div className="gradient" />
+                    </div>
 
-                <main className="app">
-                    <Nav />
-                    { children }
-                </main>
+                    <main className="app">
+                        <Nav />
+                        { children }
+                    </main>
+                </Provider>
             </body>
         </html>
     )
