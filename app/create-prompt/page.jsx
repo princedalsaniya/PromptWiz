@@ -23,6 +23,13 @@ const CreatePrompt = () => {
   const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
 
+  /*
+    params  : ClickEvent = This is just used to preventDefault.
+    returns : -
+    desc    : Sets the submitting flag to true.
+              Then sends a POST request with the newPrompt.
+              If it is successfull then it will make that flag false and redirects to HOME page.
+  */
   const createPrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);

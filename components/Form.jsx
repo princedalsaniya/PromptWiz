@@ -32,7 +32,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
 
           <textarea 
-            value={post.propmt}
+            value={post.prompt}
             onChange={ (e) => setPost({...post, prompt: e.target.value })}
             placeholder='Write your propmt here...'
             required
