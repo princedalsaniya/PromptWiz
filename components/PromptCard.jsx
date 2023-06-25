@@ -1,12 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
+/*
+  desc      : Component - PropmtCard
+  route     : -
+  requires  : usePathName = used to determine if this is the `profile` path or not.
+                            If it is and the post.creator is same as currentUser in session,
+                            then we would like to show Edit and Delete buttons.
+  exports   : PromptCard
+  author    : Prince Dalsaniya
+*/
+
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+  const { data: session } = useSession();
+  const pathName = usePathname();
+  const router = useRouter();
   const [copied, setCopied] = useState("");
 
   /*
@@ -62,6 +74,23 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
       >
         #{post.tag}
       </p>
+
+      {session?.user.id === post.creator._id && pathName === "/profile" && (
+        <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+          <p
+            className='font-inter text-sm green_gradient cursor-pointer'
+            onClick={handleEdit}
+          >
+            Edit
+          </p>
+          <p
+            className='font-inter text-sm orange_gradient cursor-pointer'
+            onClick={handleDelete}
+          >
+            Delete
+          </p>
+        </div>
+      )}
     </div>
   );
 };
