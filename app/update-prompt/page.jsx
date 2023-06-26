@@ -24,6 +24,11 @@ const UpdatePrompt = () => {
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    /*
+      params  : -
+      returns : -
+      desc    : This will fetch all details of the perticular prompt with the given promptID.
+    */
     const getPromptDetails = async () => {
       const response = await fetch(`/api/prompt/${promptId}`);
       const data = await response.json();

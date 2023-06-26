@@ -23,6 +23,11 @@ const UserProfile = ({ params }) => {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {
+    /*
+      params  : -
+      returns : -
+      desc    : This will fetch all the posts made by the user_id passed in the params.
+    */
     const fetchPosts = async () => {
       const response = await fetch(`/api/users/${params?.id}/posts`);
       const data = await response.json();

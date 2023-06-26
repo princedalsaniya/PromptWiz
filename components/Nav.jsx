@@ -22,6 +22,11 @@ const Nav = () => {
   const [toggleDropDown, setToggleDropDown] = useState(false);
 
   useEffect(() => {
+    /*
+      params  : -
+      returns : -
+      desc    : This will set the providers returned from getProviders of next-auth/react.
+    */
     const initProviders = async () => {
       const response = await getProviders();
       setProviders(response);
